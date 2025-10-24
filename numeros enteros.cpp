@@ -1,7 +1,11 @@
 //DIRECTIVAS DEL PREPROCESADOR
 #include <iostream>
 #include <cmath>
-using namespace std;
+
+
+using std::cout;
+using std::endl;
+using std::abs;
 
 
 // PROTOTIPOS DE FUNCION
@@ -19,6 +23,7 @@ int main(){
     return 0;
 }
 */
+
 
 // DEFINICIONES DE FUNCION
 int ultimoDigito(int numero){
@@ -45,13 +50,9 @@ int sumarTodosLosDigitos(int numero){
     return suma;
 }
 bool existeDigito(int numero, int digito){
-    // si el numero es negativo se convertira a su valor absoluto (positivo)
-    if(numero < 0){
-        numero = -numero;
-    }
+    numero = abs(numero);  // ejemplo: -5 ahora sera 5
 
-
-    // lo que haremos si sucede el edge case 0
+    // edge case 0
     if(numero == 0){
         return (digito == 0); // osea la variable digito tendra el valor de 0 y buscara los 0 en "el buscador"
     }
