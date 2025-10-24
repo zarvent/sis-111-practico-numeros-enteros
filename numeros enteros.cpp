@@ -7,6 +7,8 @@ using namespace std;
 int ultimoDigito(int numero);
 int quitarUltimoDigito(int numero);
 int sumarTodosLosDigitos(int numero);
+bool existeDigito(int numero, int digito);
+int cantidadDeDigitos(int numero);
 
 
 /*
