@@ -16,21 +16,9 @@ int main(){
 
     return 0;
 }
-/*
+*/
 
-// FUNCIONES PSHSH COJUDITO
-int valorAbsoluto(int numero){
-    /*
-    Aqui usare un operador tercinario
-    basicamente funciona asi:
-    condicion ? expresion1: expresion2;
-    osea
-    pregunta ? valorPorVerdad: valorPorMentira;
 
-    lo que hara mi funcion es que se preguntara si el numero es menor que 0, si es menor que 0 lo convertirremos a positivo y si es positivo lo dejamos como esta
-    */
-    return (n < 0) ? -numero : numero;
-}
 int ultimoDigito(int numero){
     return numero % 10;
 }
@@ -61,8 +49,7 @@ bool existeDigito(int numero, int digito){
 
     // lo que haremos si sucede el edge case 0
     if(numero == 0){
-        return (digito == 0)
-        // osea la variable digito tendra el valor de 0 y buscara los 0 en "el buscador"
+        return (digito == 0); // osea la variable digito tendra el valor de 0 y buscara los 0 en "el buscador"
     }
 
 
@@ -76,10 +63,32 @@ bool existeDigito(int numero, int digito){
         // esto es lo que hara la maquina si no encuentra el numero
         numero /= 10; // osea buscara si el proximo digito existe en el algoritmo
     }
+    return false;
+}
+int cantidadDeDigitos(int numero){
+    numero = abs(numero);
+
+    // caso especial para 0
+    if(numero == 0){
+        return 1;
+    }
+
+    int cantidadDigitos = 0;
+
+    while(numero > 0){
+        // si accedimos aca significa que tenemos digitos por contar
+        numero /= 10;
+        cantidadDigitos++;
+
+    }
+       return cantidadDigitos;
 }
 
 
-// AYUDA DE BENJAMIN
+
+
+/*
+AYUDA DE BENJAMIN
 int contarDiferentes(int numero, int cantidadDigitos){
 }
 
@@ -112,3 +121,5 @@ int numerosUnicos(int numero){
         }
     }
 }
+
+/*
