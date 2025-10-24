@@ -4,7 +4,6 @@ using namespace std;
 
 
 // PROTOTIPOS DE FUNCION
-int valorAbsoluto(int numero);
 int ultimoDigito(int numero);
 int quitarUltimoDigito(int numero);
 int sumarTodosLosDigitos(int numero);
@@ -20,23 +19,25 @@ int main(){
 
 
 int ultimoDigito(int numero){
-    return numero % 10;
+    return abs(numero % 10);
 }
 int quitarUltimoDigito(int numero){
     // dividiendolo entre 10 sacamos el ultimo digito de las unidades de n
-    numero += / 10;
+    numero /= 10;
     return numero;
 }
 int sumarTodosLosDigitos(int numero){
     int suma = 0;
 
+    // para evitar recibir negativos
+    numero = abs(numero);
+
     // bucle para procesar todos los digitos
     while (numero > 0){
         // obtenemos el ultimo digito y lo sumammos
         suma += numero % 10;
-
         //quitamos el ultimo digito del numero original
-        numero %= 10
+        numero /= 10;
     }
     return suma;
 }
