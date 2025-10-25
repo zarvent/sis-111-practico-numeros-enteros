@@ -14,7 +14,7 @@ int quitarUltimoDigito(int numero);
 int sumarTodosLosDigitos(int numero);
 bool existeDigito(int numero, int digito);
 int cantidadDeDigitos(int numero);
-
+int extraerDigitoPorPosicion(int numero, int posicion);
 
 /*
 EL MAIN
@@ -87,4 +87,14 @@ int cantidadDeDigitos(int numero){
 
     }
        return cantidadDigitos;
+}
+int extraerDigitoPorPosicion(int numero, int posicion){
+    numero = abs(numero);
+
+    // posicion (dada en consola) recorrera todos los digitos del numero hasta extraer el digito que queremos
+    while(posicion > 1){
+        numero /= 10;
+        posicion--;
+    }
+    return (numero % 10); // rebotamos el digito que el usuario pidio
 }
