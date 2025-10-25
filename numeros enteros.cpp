@@ -15,6 +15,7 @@ int sumarTodosLosDigitos(int numero);
 bool existeDigito(int numero, int digito);
 int cantidadDeDigitos(int numero);
 int extraerDigitoPorPosicion(int numero, int posicion);
+int digitoMenor(int numero);
 
 /*
 EL MAIN
@@ -97,4 +98,24 @@ int extraerDigitoPorPosicion(int numero, int posicion){
         posicion--;
     }
     return (numero % 10); // rebotamos el digito que el usuario pidio
+}
+int digitoMenor(int numero){
+    numero = abs(numero);
+    int digitoMenor = 9; // maximo valor posible
+
+    // edge case con el 0
+    if(numero == 0){
+        digitoMenor = 0;
+    }
+
+    //recorremos todos los numeros
+    while(numero > 0){
+        int numeroAuxiliar = numero % 10;
+
+        if(numeroAuxiliar < digitoMenor){
+            digitoMenor = numeroAuxiliar;
+        }
+    numero /= 10;
+    }
+    return digitoMenor;
 }
