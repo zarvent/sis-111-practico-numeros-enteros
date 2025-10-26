@@ -1,6 +1,11 @@
-# 🔢 Práctico: Funciones
+# 🔢 Práctico: Numeros Enteros
 
 Un práctico en c++ de la asignatura SIS-111 [Introduccion A La Programacion]
+
+![Campus UCB](archives/ucbCampus.jpg)
+
+> 📄 **[Ver enunciado del práctico](practico%20numeros%20enteros.pdf)**
+
 ---
 
 ## ¿De qué va esto?
@@ -24,6 +29,7 @@ Básicamente tenemos un conjunto de funciones que te permiten **jugar con los d�
 ---
 
 ## 🔍 Notas
+
 - Las funciones manejan **números negativos** sin drama (usan `abs()`)
 - El caso especial del **0** ya está contemplado en cada función
 - Todo está en C++ clásico, sin complicaciones
