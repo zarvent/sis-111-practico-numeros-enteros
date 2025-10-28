@@ -33,6 +33,7 @@ int ultimoDigito(int numero){
     return abs(numero % 10);
 }
 int quitarUltimoDigito(int numero){
+    numero = abs(numero);
     // dividiendolo entre 10 sacamos el ultimo digito de las unidades de n
     numero /= 10;
     return numero;
@@ -93,6 +94,19 @@ int cantidadDeDigitos(int numero){
 }
 int extraerDigitoPorPosicion(int numero, int posicion){
     numero = abs(numero);
+
+    // si el usuario pone 0?
+    if(posicion == 0){
+        cout << "Introduce una posicion correcta";
+        return -1;
+    }
+
+    // y si el usuario da una posicion mas grande que el numero que tenemos?
+    if(posicion > cantidadDeDigitos(numero){
+        cout << "Introduce una posicion correcta";
+        return -1;
+    }
+
 
     // posicion (dada en consola) recorrera todos los digitos del numero hasta extraer el digito que queremos
     while(posicion > 1){
