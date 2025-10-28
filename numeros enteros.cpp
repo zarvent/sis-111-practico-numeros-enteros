@@ -16,6 +16,8 @@ bool existeDigito(int numero, int digito);
 int cantidadDeDigitos(int numero);
 int extraerDigitoPorPosicion(int numero, int posicion);
 int digitoMenor(int numero);
+int digitoMayor(int numero);
+
 
 /*
 EL MAIN
@@ -118,4 +120,19 @@ int digitoMenor(int numero){
     numero /= 10;
     }
     return digitoMenor;
+}
+int digitoMayor(int numero){
+    numero = abs(numero);
+    int digitoMayor = -1; // ningun numero absoluto puede ser menor a esto
+
+    //este bloque si o si se ejecutara 1 vez y previene edge cases como por ejemplo el 0
+    do{
+        int digito = numero % 10; // saca el ultimo digito
+        if(digito > digitoMayor){ //
+            digitoMayor = digito;
+        }
+        numero /= 10;
+    }
+    while(numero > 0);
+    return digitoMayor;
 }
