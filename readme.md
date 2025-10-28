@@ -2,7 +2,13 @@
 
 Un práctico en c++ de la asignatura SIS-111 [Introduccion A La Programacion]
 
-![Campus UCB](archives/ucbCampus.jpg)
+<p align="center">
+  <img src="./archives/ucbCampus.jpg" alt="Campus UCB" style="max-width:320px; width:100%; height:auto;">
+</p>
+
+<p align="center">
+  <a href="./archives/ucbCampus.jpg">Si la imagen no se muestra, haga clic aquí para abrirla</a>
+</p>
 
 > 📄 **[Ver enunciado del práctico](practico%20numeros%20enteros.pdf)**
 
