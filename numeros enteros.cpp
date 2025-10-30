@@ -17,6 +17,7 @@ int cantidadDeDigitos(int numero);
 int extraerDigitoPorPosicion(int numero, int posicion);
 int digitoMenor(int numero);
 int digitoMayor(int numero);
+int invertirNumero(int numero);
 
 
 /*
@@ -102,7 +103,7 @@ int extraerDigitoPorPosicion(int numero, int posicion){
     }
 
     // y si el usuario da una posicion mas grande que el numero que tenemos?
-    if(posicion > cantidadDeDigitos(numero){
+    if(posicion > cantidadDeDigitos(numero)){
         cout << "Introduce una posicion correcta";
         return -1;
     }
@@ -149,4 +150,28 @@ int digitoMayor(int numero){
     }
     while(numero > 0);
     return digitoMayor;
+}
+int invertirNumero(int numero){
+    int nuevoNumero = 0, digito = 0;
+    numero = abs(numero);
+
+    while(numero > 0){
+        digito = numero % 10;
+        numero = numero / 10;
+        nuevoNumero = nuevoNumero * 10 + digito;
+    }
+    return nuevoNumero;
+}
+
+/*
+primerNumero = numero entero original
+segundoNUmero = numero a unir
+nuevoNumero = el numero que se formara al contatenar/unir
+*/
+int unirEntero(int numero){
+    int digitos = cantidadDeDigitos(numero);
+    int desplazamiento = 10 * digitos
+    int nuevoNumero = (numero * desplazamiento) + numero;
+
+    return nuevoNumero;
 }
