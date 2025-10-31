@@ -32,34 +32,40 @@ int main(){
 // DEFINICIONES DE FUNCION
 
 /**
- * @brief obtiene el digito de la ultima unidad del numero entero introducido, ignorando el signo
- * Modulo 10 (numero % 10): devuelve el resto de dividir el numero por 10, es decir el ultimo digito de las unidades
- * @details esta funcion utiliza el valor absoluto con abs(numero)
+ * @brief Obtiene el último dígito de un número entero, sin importar su signo.
+ *
+ * Usa el operador módulo (numero % 10) para extraer el dígito de las unidades.
+ *
+ * @details Utiliza abs(numero) para trabajar con valores absolutos.
+ *
  * @code
  * ultimoDigito(123)  // Retorna 3
  * ultimoDigito(-456) // Retorna 6
  * ultimoDigito(0)    // Retorna 0
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) del cual se extraera el ultimo digito
- * @return un entero POSITIVO en el rango de [0, 9]
+ * @param numero Número entero del cual extraer el último dígito (puede ser positivo, negativo o cero).
+ * @return Entero positivo en el rango [0, 9] que representa el último dígito.
  */
 int ultimoDigito(int numero){
     return abs(numero % 10);
 }
 
 /**
- * @brief remueve el ultimo digito del numero entero introducido, ignorando el signo
- * Division entera por 10 (numero / 10): elimina el digito de las unidades dejando solo las decenas en adelante
- * @details esta funcion utiliza el valor absoluto con abs(numero) para trabajar con numeros positivos y negativos
+ * @brief Elimina el último dígito de un número entero, sin importar su signo.
+ *
+ * Utiliza división entera por 10 (numero / 10) para descartar el dígito de las unidades.
+ *
+ * @details Aplica abs(numero) para trabajar con el valor absoluto del número.
+ *
  * @code
  * quitarUltimoDigito(123)  // Retorna 12
  * quitarUltimoDigito(-456) // Retorna 45
  * quitarUltimoDigito(7)    // Retorna 0
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) al cual se le quitara el ultimo digito
- * @return un entero POSITIVO que representa el numero original sin su ultimo digito
+ * @param numero Número entero al que se le quitará el último dígito (puede ser positivo, negativo o cero).
+ * @return Entero positivo que representa el número original sin su último dígito.
  */
 int quitarUltimoDigito(int numero){
     numero = abs(numero);
@@ -69,17 +75,20 @@ int quitarUltimoDigito(int numero){
 
 
 /**
- * @brief suma todos los digitos del numero entero introducido, ignorando el signo
- * Suma acumulativa (suma += numero % 10): extraemos el ultimo digito y lo agregamos al total
- * @details esta funcion utiliza el valor absoluto con abs(numero) y un bucle while para recorrer cada digito hasta que no queden mas unidades
+ * @brief Suma todos los dígitos de un número entero, sin importar su signo.
+ *
+ * Usa suma acumulativa (suma += numero % 10) extrayendo cada dígito y sumándolo al total.
+ *
+ * @details Utiliza abs(numero) y un bucle while para recorrer cada dígito de derecha a izquierda.
+ *
  * @code
- * sumarTodosLosDigitos(123)  // Retorna 6
- * sumarTodosLosDigitos(-45)  // Retorna 9
+ * sumarTodosLosDigitos(123)  // Retorna 6 (1+2+3)
+ * sumarTodosLosDigitos(-45)  // Retorna 9 (4+5)
  * sumarTodosLosDigitos(0)    // Retorna 0
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) del cual se sumaran todos los digitos
- * @return un entero POSITIVO que representa la suma de los digitos del numero original
+ * @param numero Número entero del cual se sumarán todos sus dígitos (puede ser positivo, negativo o cero).
+ * @return Entero positivo que representa la suma de todos los dígitos.
  */
 int sumarTodosLosDigitos(int numero){
     int suma = 0;
@@ -92,18 +101,21 @@ int sumarTodosLosDigitos(int numero){
     return suma;
 }
 /**
- * @brief verifica si el digito dado aparece dentro del numero entero introducido
- * Exploracion iterativa (numero % 10 == digito): revisa digito por digito de derecha a izquierda
- * @details esta funcion utiliza el valor absoluto con abs(numero) para permitir negativos y controla el caso especial cuando numero es 0
+ * @brief Verifica si un dígito específico existe dentro de un número entero.
+ *
+ * Recorre el número dígito por dígito (numero % 10 == digito) de derecha a izquierda.
+ *
+ * @details Utiliza abs(numero) para manejar números negativos. Incluye validación especial para el caso numero == 0.
+ *
  * @code
  * existeDigito(123, 2)  // Retorna true
  * existeDigito(-789, 5) // Retorna false
  * existeDigito(0, 0)    // Retorna true
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) donde buscaremos el digito
- * @param digito El digito individual [0, 9] que deseamos encontrar
- * @return true si el digito existe en el numero, false en caso contrario
+ * @param numero Número entero donde se buscará el dígito (puede ser positivo, negativo o cero).
+ * @param digito Dígito a buscar, debe estar en el rango [0, 9].
+ * @return true si el dígito existe en el número, false en caso contrario.
  */
 bool existeDigito(int numero, int digito){
     numero = abs(numero);
@@ -122,17 +134,20 @@ bool existeDigito(int numero, int digito){
     return false;
 }
 /**
- * @brief calcula la cantidad de digitos que tiene el numero entero introducido, ignorando el signo
- * Conteo iterativo (numero /= 10): descartamos la ultima unidad hasta quedarnos sin numero
- * @details esta funcion utiliza el valor absoluto con abs(numero) y considera el caso especial del 0 que tiene un digito
+ * @brief Calcula la cantidad de dígitos de un número entero, sin importar su signo.
+ *
+ * Cuenta iterativamente dividiendo por 10 (numero /= 10) hasta que el número sea cero.
+ *
+ * @details Utiliza abs(numero) y trata el caso especial del 0, que cuenta como un dígito.
+ *
  * @code
  * cantidadDeDigitos(123)  // Retorna 3
  * cantidadDeDigitos(-45)  // Retorna 2
  * cantidadDeDigitos(0)    // Retorna 1
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) del cual contaremos los digitos
- * @return un entero POSITIVO que indica la cantidad de digitos del numero original
+ * @param numero Número entero del cual contar los dígitos (puede ser positivo, negativo o cero).
+ * @return Entero positivo que indica la cantidad de dígitos.
  */
 int cantidadDeDigitos(int numero){
     numero = abs(numero);
@@ -151,21 +166,25 @@ int cantidadDeDigitos(int numero){
     return cantidadDigitos;
 }
 /**
- * @brief extrae el digito segun la posicion deseada dentro del numero entero introducido
- * Recorrido iterativo (numero /= 10): movemos la posicion hasta alcanzar el digito objetivo desde la derecha (posicion 1 = ultimo digito)
- * @details esta funcion utiliza el valor absoluto con abs(numero) y valida que la posicion sea valida (mayor a 0 y dentro del rango del numero)
+ * @brief Extrae el dígito en una posición específica de un número entero.
+ *
+ * Recorre iterativamente (numero /= 10) hasta alcanzar la posición deseada contando desde la derecha.
+ * La posición 1 corresponde al último dígito (unidades).
+ *
+ * @details Utiliza abs(numero) y valida que la posición sea mayor a 0 y no exceda la cantidad de dígitos.
+ *
  * @code
- * extraerDigitoPorPosicion(9876, 1) // Retorna 6 (primer digito desde derecha)
- * extraerDigitoPorPosicion(9876, 3) // Retorna 8 (tercer digito desde derecha)
- * extraerDigitoPorPosicion(-25, 2)  // Retorna 2 (segundo digito de 25)
- * extraerDigitoPorPosicion(123, 0)  // Retorna -1 (posicion invalida: cero)
- * extraerDigitoPorPosicion(123, -2) // Retorna -1 (posicion invalida: negativa)
- * extraerDigitoPorPosicion(123, 5)  // Retorna -1 (posicion invalida: supera cantidad de digitos)
+ * extraerDigitoPorPosicion(9876, 1) // Retorna 6 (primer dígito desde derecha)
+ * extraerDigitoPorPosicion(9876, 3) // Retorna 8 (tercer dígito desde derecha)
+ * extraerDigitoPorPosicion(-25, 2)  // Retorna 2 (segundo dígito de 25)
+ * extraerDigitoPorPosicion(123, 0)  // Retorna -1 (posición inválida: cero)
+ * extraerDigitoPorPosicion(123, -2) // Retorna -1 (posición inválida: negativa)
+ * extraerDigitoPorPosicion(123, 5)  // Retorna -1 (posición inválida: excede dígitos)
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) del cual extraeremos un digito
- * @param posicion La posicion (base 1, desde la derecha) que indica cual digito deseamos recuperar
- * @return el digito POSITIVO que corresponde a la posicion solicitada o -1 si la posicion no es valida
+ * @param numero Número entero del cual extraer un dígito (puede ser positivo, negativo o cero).
+ * @param posicion Posición del dígito a extraer (base 1, desde la derecha).
+ * @return Dígito positivo en la posición solicitada, o -1 si la posición es inválida.
  */
 int extraerDigitoPorPosicion(int numero, int posicion){
     numero = abs(numero);
@@ -184,17 +203,20 @@ int extraerDigitoPorPosicion(int numero, int posicion){
     return (numero % 10);
 }
 /**
- * @brief encuentra el digito mas pequeno dentro del numero entero introducido, ignorando el signo
- * Busqueda lineal (numeroAuxiliar < digitoMenor): comparamos cada digito con el minimo actual inicializado en 9
- * @details esta funcion utiliza el valor absoluto con abs(numero) y controla el edge case cuando numero es 0
+ * @brief Encuentra el dígito más pequeño dentro de un número entero, sin importar su signo.
+ *
+ * Compara cada dígito (numeroAuxiliar < digitoMenor) con el mínimo actual, inicializado en 9.
+ *
+ * @details Utiliza abs(numero) e incluye validación especial para el caso numero == 0.
+ *
  * @code
  * digitoMenor(395)  // Retorna 3
  * digitoMenor(-742) // Retorna 2
  * digitoMenor(0)    // Retorna 0
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) en el que buscaremos el digito mas pequeno
- * @return un entero POSITIVO en el rango de [0, 9] que representa el digito mas chico encontrado
+ * @param numero Número entero donde buscar el dígito menor (puede ser positivo, negativo o cero).
+ * @return Entero positivo en el rango [0, 9] que representa el dígito más pequeño.
  */
 int digitoMenor(int numero){
     numero = abs(numero);
@@ -216,17 +238,20 @@ int digitoMenor(int numero){
     return digitoMenor;
 }
 /**
- * @brief encuentra el digito mas grande dentro del numero entero introducido, ignorando el signo
- * Busqueda con do-while (digito > digitoMayor): saca el ultimo digito, lo compara y continua hasta quedarse sin unidades
- * @details esta funcion utiliza el valor absoluto con abs(numero) para trabajar con negativos y garantiza al menos una iteracion para cubrir el caso 0
+ * @brief Encuentra el dígito más grande dentro de un número entero, sin importar su signo.
+ *
+ * Usa un bucle do-while (digito > digitoMayor) para comparar cada dígito con el máximo actual, inicializado en -1.
+ *
+ * @details Utiliza abs(numero) y garantiza al menos una iteración para manejar correctamente el caso numero == 0.
+ *
  * @code
  * digitoMayor(395)  // Retorna 9
  * digitoMayor(-742) // Retorna 7
  * digitoMayor(0)    // Retorna 0
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) en el que buscaremos el digito mas grande
- * @return un entero POSITIVO en el rango de [0, 9] que representa el digito mas grande encontrado
+ * @param numero Número entero donde buscar el dígito mayor (puede ser positivo, negativo o cero).
+ * @return Entero positivo en el rango [0, 9] que representa el dígito más grande.
  */
 int digitoMayor(int numero){
     numero = abs(numero);
@@ -244,17 +269,22 @@ int digitoMayor(int numero){
     return digitoMayor;
 }
 /**
- * @brief invierte el orden de los digitos del numero entero introducido, ignorando el signo
- * Construccion progresiva (nuevoNumero * 10 + digito): vamos moviendo los digitos al nuevo numero multiplicando por 10 y sumando el ultimo digito
- * @details esta funcion utiliza el valor absoluto con abs(numero) y un while para procesar cada digito de derecha a izquierda
+ * @brief Invierte el orden de los dígitos de un número entero, sin importar su signo.
+ *
+ * Construye el número invertido progresivamente (nuevoNumero * 10 + digito), extrayendo cada dígito
+ * del original y agregándolo al nuevo número.
+ *
+ * @details Utiliza abs(numero) y un bucle while para procesar cada dígito de derecha a izquierda.
+ * Los ceros a la izquierda del número original se pierden (ej: -450 → 54).
+ *
  * @code
  * invertirNumero(123)  // Retorna 321
  * invertirNumero(-450) // Retorna 54
  * invertirNumero(7)    // Retorna 7
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) que queremos invertir
- * @return un entero POSITIVO con los digitos del numero original en orden inverso
+ * @param numero Número entero a invertir (puede ser positivo, negativo o cero).
+ * @return Entero positivo con los dígitos en orden inverso.
  */
 int invertirNumero(int numero){
     int nuevoNumero = 0, digito = 0;
@@ -269,17 +299,22 @@ int invertirNumero(int numero){
 }
 
 /**
- * @brief concatena el numero entero introducido consigo mismo para formar un nuevo entero mas largo
- * Desplazamiento por potencia de 10 (pow(10, digitos)): multiplicamos por potencias de 10 segun la cantidad de digitos para dejar espacio antes de sumar la copia
- * @details esta funcion reutiliza cantidadDeDigitos(numero) para conocer cuantas posiciones mover y funciona igual con numeros positivos o negativos gracias a abs dentro de las funciones auxiliares
+ * @brief Concatena un número entero consigo mismo para formar un nuevo número.
+ *
+ * Desplaza el número original usando potencias de 10 (pow(10, digitos)) para hacer espacio,
+ * luego suma el número original nuevamente.
+ *
+ * @details Reutiliza cantidadDeDigitos(numero) para calcular el desplazamiento necesario.
+ * Funciona con números positivos y negativos gracias a abs() en las funciones auxiliares.
+ *
  * @code
  * unirEntero(12)   // Retorna 1212
  * unirEntero(-34)  // Retorna 3434
  * unirEntero(7)    // Retorna 77
  * @endcode
  *
- * @param numero El numero entero (positivo,negativo o cero) que se concatenara consigo mismo
- * @return un entero POSITIVO que representa el numero original repetido dos veces
+ * @param numero Número entero a concatenar consigo mismo (puede ser positivo, negativo o cero).
+ * @return Entero positivo que representa el número original repetido dos veces.
  */
 int unirEntero(int numero){
     numero = abs(numero);
