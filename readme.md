@@ -23,8 +23,11 @@ Básicamente tenemos un conjunto de funciones que te permiten **jugar con los d�
 | **sumarTodosLosDigitos(n)** | Suma todos los dígitos (ej: 123 → 6) |
 | **existeDigito(n, d)** | Te dice si un dígito existe en el número |
 | **cantidadDeDigitos(n)** | Cuántos dígitos tiene el número |
-| **extraerDigitoPorPosicion(n, p)** | Extrae el dígito en una posición específica |
+| **extraerDigitoPorPosicion(n, p)** | Extrae el dígito en una posición específica (desde la derecha, empieza en 1) |
 | **digitoMenor(n)** | Encuentra el dígito más pequeño |
+| **digitoMayor(n)** | Encuentra el dígito más grande |
+| **invertirNumero(n)** | Invierte el orden de los dígitos (ej: 123 → 321) |
+| **unirEntero(n)** | Duplica el número concatenándolo consigo mismo (ej: 12 → 1212) |
 
 ---
 
@@ -33,6 +36,8 @@ Básicamente tenemos un conjunto de funciones que te permiten **jugar con los d�
 - Las funciones manejan **números negativos** sin drama (usan `abs()`)
 - El caso especial del **0** ya está contemplado en cada función
 - Todo está en C++ clásico, sin complicaciones
+- `extraerDigitoPorPosicion()` devuelve **-1** si la posición es inválida (fuera de rango o ≤ 0)
+- Código documentado con **Doxygen** para que entiendas qué hace cada función
 
 ---
 
