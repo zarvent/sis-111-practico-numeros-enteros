@@ -1,44 +1,42 @@
-# 🔢 Práctico: Numeros Enteros
+# Resumen de Mejoras en la Cobertura de Pruebas
 
-Un práctico en c++ de la asignatura SIS-111 [Introduccion A La Programacion]
+Este documento resume las mejoras realizadas para aumentar la cobertura de pruebas del repositorio.
 
-![Campus UCB](archives/ucbCampus.jpg)
+## Archivos Modificados
 
-> 📄 **[Ver enunciado del práctico](practico%20numeros%20enteros.pdf)**
+-   **`test_numeros_enteros.cpp`**: Se ha creado este nuevo archivo para contener todas las pruebas unitarias de las funciones definidas en `numeros enteros.cpp`.
 
----
+## Nuevos Comportamientos y Casos Cubiertos
 
-## ¿De qué va esto?
+Se han implementado pruebas exhaustivas para todas las funciones, cubriendo los siguientes escenarios:
 
-Básicamente tenemos un conjunto de funciones que te permiten **jugar con los dígitos** de cualquier número. Extraer dígitos, sumarlos, buscar si existe uno en particular... ese tipo de cosas que parecen simples pero son la base para algoritmos mucho más complejos.
+-   **Números Positivos**: Se verifica el comportamiento estándar de cada función con entradas positivas.
+-   **Números Negativos**: Se asegura que todas las funciones manejen correctamente los números negativos, principalmente a través del uso de `abs()`.
+-   **Cero**: Se han añadido casos de prueba específicos para el número `0`, que a menudo es un caso especial.
+-   **Casos Extremos**:
+    -   Números de un solo dígito.
+    -   Posiciones inválidas (cero, negativas o fuera de rango) para la función `extraerDigitoPorPosicion`.
+    -   Números que contienen ceros en posiciones intermedias (ej: `101`).
 
----
+## Cómo Compilar y Ejecutar las Pruebas
 
-## 📋 Funciones disponibles
+Para verificar la correcta implementación y asegurarse de que no se han introducido regresiones, siga estos pasos:
 
-| Función | ¿Qué hace? |
-|---------|-----------|
-| **ultimoDigito(n)** | Devuelve el último dígito del número |
-| **quitarUltimoDigito(n)** | Elimina el último dígito |
-| **sumarTodosLosDigitos(n)** | Suma todos los dígitos (ej: 123 → 6) |
-| **existeDigito(n, d)** | Te dice si un dígito existe en el número |
-| **cantidadDeDigitos(n)** | Cuántos dígitos tiene el número |
-| **extraerDigitoPorPosicion(n, p)** | Extrae el dígito en una posición específica (desde la derecha, empieza en 1) |
-| **digitoMenor(n)** | Encuentra el dígito más pequeño |
-| **digitoMayor(n)** | Encuentra el dígito más grande |
-| **invertirNumero(n)** | Invierte el orden de los dígitos (ej: 123 → 321) |
-| **unirEntero(n)** | Duplica el número concatenándolo consigo mismo (ej: 12 → 1212) |
+1.  **Compilar los archivos**: Utilice un compilador de C++ (como g++) para compilar el código fuente junto con el archivo de pruebas.
 
----
+    ```bash
+    g++ "numeros enteros.cpp" "test_numeros_enteros.cpp" -o test_runner
+    ```
 
-## 🔍 Notas
+2.  **Ejecutar las pruebas**: Ejecute el archivo compilado desde la terminal.
 
-- Las funciones manejan **números negativos** sin drama (usan `abs()`)
-- El caso especial del **0** ya está contemplado en cada función
-- Todo está en C++ clásico, sin complicaciones
-- `extraerDigitoPorPosicion()` devuelve **-1** si la posición es inválida (fuera de rango o ≤ 0)
-- Código documentado con **Doxygen** para que entiendas qué hace cada función
+    ```bash
+    ./test_runner
+    ```
 
----
+Si todas las pruebas se ejecutan correctamente, verá el siguiente mensaje en la consola:
 
-**Cesar Sebastian Zambrana Ventura** | 2025
+```
+Iniciando pruebas...
+Todas las pruebas pasaron exitosamente.
+```
